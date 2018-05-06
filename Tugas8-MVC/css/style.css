@@ -79,7 +79,7 @@ input[type=text],[type=date],[type=email] {
    text-shadow: none;
    }
 textarea {
-    width: 23%;
+    width: 35%;
     padding: 4px 0;
     color: #3D5166 !important;
     font-size: 13px;
@@ -97,7 +97,7 @@ textarea {
    margin-top: 6px;
 }   
 select {
-    width: 23%;
+    width: 35%;
     padding: 4px 0;
     color: #3D5166 !important;
     font-size: 13px;
@@ -134,4 +134,9 @@ position: relative;
 .button:active {
   background-color: #3e8e41;
   transform: translateY(2px);
+}
+.berkas-pendukung {
+    display: block;
+    margin: 10px 65px;
+    width: 30%;
 }

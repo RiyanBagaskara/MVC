@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Data Pendaftar</title>
-    <link rel="stylesheet" href="../../css/style.css" media="screen">
-        <script type="text/javascript">
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>Weeks of Welcoming SI</title>
 </head>
-<body>
 
+<body>
+    <?php
+$extension = strtolower(pathinfo($file['pic']['name'], PATHINFO_EXTENSION));
+$photo = "images/uploaded." . $extension;
+if (file_exists($photo)) {
+    unlink($photo);
+}
+move_uploaded_file($file['pic']['tmp_name'], $photo);
+?>  
+ 
 <div id="art-main">
     <form  class="register" enctype="multipart/form-data">
     <h1>Registration</h1>
@@ -21,7 +29,11 @@
                 <label>Nama Lengkap</label><br>
                 <?php echo $_POST["nama_depan"] ?>
                 <?php echo $_POST["nama_belakang"] ?>
-            </p>    
+            </p>
+            <p>
+                <label>Fakultas</label><br>
+                <?php echo $fakultas; ?>
+            </p>     
             <p>
                 <label>Jenis Kelamin</label><br>
                 <?php echo $_POST["jenis_kelamin"] ?>
@@ -73,14 +85,9 @@
                 </p>
                 <p>
                 <label>Berkas Pendukung:</label><br>
-                     <?php
-                        $extension = strtolower(pathinfo($file['pic']['name'], PATHINFO_EXTENSION));
-                        $photo = "images/uploaded." . $extension;
-                        if (file_exists($photo)) {
-                            unlink($photo);
-                        }
-                        move_uploaded_file($file['pic']['tmp_name'], $photo);
-                    ?>   
+                    <div>
+                     <img class="berkas-pendukung" src="<?php echo "../../$photo" ?>" alt="Pas Foto">
+                    </div>
                 </p>
         </fieldset>
         <fieldset class="row1">
@@ -89,7 +96,5 @@
                 <a href="viewform" class="btn btn-info" role="button">Kembali ke halaman input &raquo; </a></p>
         </fieldset>
     </form>
-
-            
 </body>
 </html>

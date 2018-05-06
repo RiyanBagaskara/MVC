@@ -83,7 +83,7 @@
             </p>
             <p>
                 <label>Berkas Pendukung:</label><br>
-                <input type="file" name="pic" required="required" accept="image/*">
+                <input required type="file" name="pic" accept="image/*">
             </p>
             <p>
                 <label></label><br>
